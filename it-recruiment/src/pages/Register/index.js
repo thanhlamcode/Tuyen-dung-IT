@@ -78,6 +78,31 @@ function Register() {
           </Form.Item>
 
           <Form.Item
+            label="Logo"
+            name="logo"
+            rules={[
+              {
+                required: true,
+                message: "Đường dẫn ảnh logo",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Ảnh công ty"
+            name="thumbnail"
+            rules={[
+              {
+                required: true,
+                message: "Đường dẫn ảnh công ty!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
             name="email"
             label="Email"
             rules={[
@@ -175,7 +200,12 @@ function Register() {
               }}
             />
           </Form.Item>
-          <Form.Item>
+          <Form.Item
+            wrapperCol={{
+              offset: 0,
+              span: 24,
+            }}
+          >
             <Button type="primary" htmlType="submit">
               Submit
             </Button>

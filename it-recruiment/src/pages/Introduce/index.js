@@ -3,14 +3,22 @@ import { getTags } from "../../service/getTags";
 import { Button, Form, Select, Tag } from "antd";
 import { getCitys } from "../../service/getCitys";
 import "./styles.scss";
+import Slider from "../../components/Slider";
+import { getCompany } from "../../service/getCompany";
 
 function Introduce() {
   const [dataTag, setDataTag] = useState([]);
   const [dataCity, setDataCity] = useState([]);
+  const [dataCompa, setDataCompa] = useState([]);
   useEffect(() => {
     getTags().then((data) => {
-      console.log(data);
       setDataTag(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    getCompany().then((data) => {
+      setDataCompa(data);
     });
   }, []);
 
@@ -92,8 +100,8 @@ function Introduce() {
           </Form.Item>
           <Form.Item
             wrapperCol={{
-              offset: 4,
-              span: 20,
+              offset: 6,
+              span: 18,
             }}
           >
             <Button type="primary" htmlType="submit">
@@ -110,6 +118,7 @@ function Introduce() {
             </>
           ))}
         </div>
+        <Slider dataCompa={dataCompa} />
       </div>
     </>
   );
