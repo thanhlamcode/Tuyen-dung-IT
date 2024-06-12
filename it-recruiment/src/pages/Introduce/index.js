@@ -118,6 +118,10 @@ function Introduce() {
             </>
           ))}
         </div>
+
+        <h3>
+          ☀️ Công Ty <span>Nổi Bật</span>
+        </h3>
         <Slider dataCompa={dataCompa} />
       </div>
     </>
