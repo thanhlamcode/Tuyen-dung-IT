@@ -1,16 +1,20 @@
 import { Col, Row, Tag } from "antd";
 import { useSelector } from "react-redux";
-import { searchFuntion } from "../../helpers/search";
+import { filterLanguage, searchFuntion } from "../../helpers/search";
 import "./styles.scss";
 import { useEffect, useState } from "react";
 
 function Search() {
   const inputSearch = useSelector((state) => state.searchReducer);
-  // console.log(inputSearch);
+  console.log(inputSearch);
   const [dataJobs, setDataJobs] = useState();
 
   useEffect(() => {
-    setDataJobs(searchFuntion(inputSearch));
+    if (inputSearch.city == null) {
+      setDataJobs(filterLanguage(inputSearch));
+    } else {
+      setDataJobs(searchFuntion(inputSearch));
+    }
   }, [inputSearch]);
 
   return (
