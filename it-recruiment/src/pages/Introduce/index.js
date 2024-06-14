@@ -5,11 +5,16 @@ import { getCitys } from "../../service/getCitys";
 import "./styles.scss";
 import Slider from "../../components/Slider";
 import { getCompany } from "../../service/getCompany";
+import { useDispatch } from "react-redux";
+import { inputSearch } from "../../actions/searchAction";
+import { useNavigate } from "react-router-dom";
 
 function Introduce() {
   const [dataTag, setDataTag] = useState([]);
   const [dataCity, setDataCity] = useState([]);
   const [dataCompa, setDataCompa] = useState([]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     getTags().then((data) => {
       setDataTag(data);
@@ -36,7 +41,9 @@ function Introduce() {
   };
 
   const handleSubmit = (e) => {
+    dispatch(inputSearch(e));
     console.log(e);
+    navigate("/search");
   };
 
   return (

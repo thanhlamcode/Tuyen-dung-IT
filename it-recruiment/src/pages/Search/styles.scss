@@ -1,0 +1,17 @@
+.search{
+    text-align: center;
+
+    &__header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            margin-right: 10px;
+        }
+
+        .ant-tag{
+            font-size: 15px;
+        }
+    }
+}

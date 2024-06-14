@@ -124,7 +124,8 @@
       "status": true,
       "city": ["Hà Nội", "TP. Hồ Chí Minh"],
       "createAt": "29-04-2023 21:22:17",
-      "updateAt": "30-04-2023 14:12:25"
+      "updateAt": "30-04-2023 14:12:25",
+      "thumbnail": "https://salt.topdev.vn/1gqkMlaODtuHsUUfukg2NnL650zqwFNyqYPX_ZVyqQo/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDI0LzA1LzA4L1RvcERldi05NjAxY2I2NjI1OTdlYTM1NzIzYTBmMjkwODc1MTM3Yi0xNzE1MTYyMjY2LnBuZw"
     },
     {
       "id": 2,
@@ -136,7 +137,8 @@
       "status": true,
       "city": ["Đà Nẵng"],
       "createAt": "28-04-2023 10:15:00",
-      "updateAt": "01-05-2023 09:30:45"
+      "updateAt": "01-05-2023 09:30:45",
+      "thumbnail": "https://salt.topdev.vn/vctjPhxb40OKrVCpC6PsiyAA_Zdl8RPrz2mBn2HlT5Y/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzAzLzEwL1RvcERldi00ZjAzYTE1ODhhZTRjZDRhZjQ3ZDYwMmJhODRjOGNmYy0xNjQ2OTA1MzUzLnBuZw"
     },
     {
       "id": 3,
@@ -148,7 +150,8 @@
       "status": false,
       "city": ["Hà Nội", "Cần Thơ"],
       "createAt": "01-05-2023 08:00:00",
-      "updateAt": "02-05-2023 12:00:00"
+      "updateAt": "02-05-2023 12:00:00",
+      "thumbnail":"https://salt.topdev.vn/XQXyPahzAenpMYWH61bBFyKdRU0NEsMDwLkohaCPsrg/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEwLzI0L1RvcERldi1DSFVCQkxvZ29EYXJrQmx1ZVJHQi0xNjY2NTgxMjg1LnBuZw"
     },
     {
       "id": 4,
@@ -160,7 +163,8 @@
       "status": true,
       "city": ["TP. Hồ Chí Minh"],
       "createAt": "27-04-2023 15:45:30",
-      "updateAt": "29-04-2023 11:20:55"
+      "updateAt": "29-04-2023 11:20:55",
+      "thumbnail": "https://salt.topdev.vn/BqP10Hya2BkK46Tu17Zo61jRF8pJWBW7uz46nMhlks0/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEyLzA2L1RvcERldi0xMTgxMTg2NzEzNTM3MTQzNjgyOTk3NTU1NTE5MzMxMjU0NDE4NTQ5MDc2N24tMTY3MDMwMzEyMy5qcGc"
     },
     {
       "id": 5,
@@ -172,7 +176,8 @@
       "status": true,
       "city": ["Hải Phòng", "Đà Nẵng"],
       "createAt": "26-04-2023 09:30:10",
-      "updateAt": "28-04-2023 10:00:00"
+      "updateAt": "28-04-2023 10:00:00",
+      "thumbnail": "https://salt.topdev.vn/0zVGrlMgwojttng3iHjzGS1PlFtP9W4SGSmy-0JctjE/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzEyLzI2L1RvcERldi1sb2dvLS0tRHVvbmctTmd1eWVuLTE3MDM1NjUzNDYucG5n"
     }
   ],
   "cvs": [
