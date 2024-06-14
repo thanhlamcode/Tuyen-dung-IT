@@ -1,10 +1,18 @@
-import { Tag } from "antd";
+import { Col, Row, Tag } from "antd";
 import { useSelector } from "react-redux";
+import { searchFuntion } from "../../helpers/search";
 import "./styles.scss";
+import { useEffect, useState } from "react";
 
 function Search() {
   const inputSearch = useSelector((state) => state.searchReducer);
-  console.log(inputSearch);
+  // console.log(inputSearch);
+  const [dataJobs, setDataJobs] = useState();
+
+  useEffect(() => {
+    setDataJobs(searchFuntion(inputSearch));
+  }, [inputSearch]);
+
   return (
     <>
       <div className="search">
@@ -16,6 +24,17 @@ function Search() {
               <Tag color="cyan">{item}</Tag>
             </>
           ))}
+        </div>
+
+        <div className="search_result">
+          <Row gutter={[20, 20]}>
+            <Col md={12} sm={24}>
+              <div>a</div>
+            </Col>
+            <Col md={12} sm={24}>
+              <div>a</div>
+            </Col>
+          </Row>
         </div>
       </div>
     </>
