@@ -6,7 +6,7 @@ import "./styles.scss";
 import Slider from "../../components/Slider";
 import { getCompany } from "../../service/getCompany";
 import { useDispatch } from "react-redux";
-import { inputSearch } from "../../actions/searchAction";
+import { inputSearch, tagSearch } from "../../actions/searchAction";
 import { useNavigate } from "react-router-dom";
 
 function Introduce() {
@@ -42,6 +42,12 @@ function Introduce() {
 
   const handleSubmit = (e) => {
     dispatch(inputSearch(e));
+    console.log(e);
+    navigate("/search");
+  };
+
+  const handleClick = (e) => {
+    dispatch(tagSearch(e));
     console.log(e);
     navigate("/search");
   };
@@ -119,7 +125,13 @@ function Introduce() {
         <div className="tag">
           {dataTag.map((item) => (
             <>
-              <Tag key={item.id} color="blue">
+              <Tag
+                onClick={() => {
+                  handleClick(item.value);
+                }}
+                key={item.id}
+                color="blue"
+              >
                 {item.value}
               </Tag>
             </>

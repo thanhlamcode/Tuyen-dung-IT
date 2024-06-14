@@ -4,3 +4,10 @@ export const inputSearch = (input) => {
     inputData: input,
   };
 };
+
+export const tagSearch = (language) => {
+  return {
+    type: "TAG_SEARCH",
+    language: language,
+  };
+};

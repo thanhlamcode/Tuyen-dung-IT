@@ -10,6 +10,12 @@ export const searchReducer = (state = initialState, action) => {
         ...state,
         ...action.inputData,
       };
+    case "TAG_SEARCH":
+      return {
+        ...state,
+        city: null,
+        language: [action.language],
+      };
     default:
       return state;
   }
