@@ -111,6 +111,26 @@
     {
       "key": 10,
       "value": "Kotlin"
+    },
+    {
+      "key": 11,
+      "value": "React"
+    },
+    {
+      "key": 12,
+      "value": "Spring Boot"
+    },
+    {
+      "key": 13,
+      "value": "SQL"
+    },
+    {
+      "key":14,
+      "value": "Docker"
+    },
+    {
+      "key":15,
+      "value": "AWS"
     }
   ],
   "jobs": [
