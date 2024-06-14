@@ -1,4 +1,5 @@
 import LayoutDefault from "../Layout/LayoutDefault";
+import Apply from "../pages/Apply";
 import Introduce from "../pages/Introduce";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -24,6 +25,10 @@ export const routes = [
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "apply/:id",
+        element: <Apply />,
       },
     ],
   },
