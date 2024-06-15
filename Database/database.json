@@ -37,7 +37,7 @@
       "companyName": "Startup Hub",
       "phone": "555-123-4567",
       "logo": "https://salt.topdev.vn/Ru6dFW-fIBb_E1E7iYOlIs_JFcAHZuPA8s0qQ4rOIWM/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA3LzI1L1RvcERldi1Mb2dvLUhOSy0tLVZOLS0tVnktSG8tVGh1eS0xNjkwMjUwNzY2LnBuZw",
-      "thumbnail":"https://salt.topdev.vn/b32n0RDzJinX8I99VfcNDcrKrnl4TC5Y4tPniNBl1Xo/fit/1920/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA3LzI1L1RvcERldi0wNWMzODFhMDg2ODhlMTczNTQ5YWRlZWYzMmIxM2IyMS0xNjkwMjUwNzY3LmpwZw",
+      "thumbnail": "https://salt.topdev.vn/b32n0RDzJinX8I99VfcNDcrKrnl4TC5Y4tPniNBl1Xo/fit/1920/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA3LzI1L1RvcERldi0wNWMzODFhMDg2ODhlMTczNTQ5YWRlZWYzMmIxM2IyMS0xNjkwMjUwNzY3LmpwZw",
       "email": "info@startuphub.com",
       "password": "startUp789",
       "token": "start456token",
@@ -125,11 +125,11 @@
       "value": "SQL"
     },
     {
-      "key":14,
+      "key": 14,
       "value": "Docker"
     },
     {
-      "key":15,
+      "key": 15,
       "value": "AWS"
     }
   ],
@@ -138,11 +138,18 @@
       "id": 1,
       "idCompany": 1,
       "name": "Frontend Developer",
-      "tags": ["Javascript", "React", "CSS"],
+      "tags": [
+        "Javascript",
+        "React",
+        "CSS"
+      ],
       "salary": "1500-2000 USD",
       "description": "Develop and maintain the frontend of our web applications using React.",
       "status": true,
-      "city": ["Hà Nội", "TP. Hồ Chí Minh"],
+      "city": [
+        "Hà Nội",
+        "TP. Hồ Chí Minh"
+      ],
       "createAt": "29-04-2023 21:22:17",
       "updateAt": "30-04-2023 14:12:25",
       "thumbnail": "https://salt.topdev.vn/1gqkMlaODtuHsUUfukg2NnL650zqwFNyqYPX_ZVyqQo/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDI0LzA1LzA4L1RvcERldi05NjAxY2I2NjI1OTdlYTM1NzIzYTBmMjkwODc1MTM3Yi0xNzE1MTYyMjY2LnBuZw"
@@ -151,11 +158,17 @@
       "id": 2,
       "idCompany": 2,
       "name": "Backend Developer",
-      "tags": ["Java", "Spring Boot", "SQL"],
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "SQL"
+      ],
       "salary": "1800-2500 USD",
       "description": "Design, implement, and maintain backend services using Java and Spring Boot.",
       "status": true,
-      "city": ["Đà Nẵng"],
+      "city": [
+        "Đà Nẵng"
+      ],
       "createAt": "28-04-2023 10:15:00",
       "updateAt": "01-05-2023 09:30:45",
       "thumbnail": "https://salt.topdev.vn/vctjPhxb40OKrVCpC6PsiyAA_Zdl8RPrz2mBn2HlT5Y/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzAzLzEwL1RvcERldi00ZjAzYTE1ODhhZTRjZDRhZjQ3ZDYwMmJhODRjOGNmYy0xNjQ2OTA1MzUzLnBuZw"
@@ -164,24 +177,36 @@
       "id": 3,
       "idCompany": 3,
       "name": "Full Stack Developer",
-      "tags": ["Python", "Django", "React"],
+      "tags": [
+        "Python",
+        "Django",
+        "React"
+      ],
       "salary": "2000-3000 USD",
       "description": "Work on both frontend and backend of our web applications using Django and React.",
       "status": false,
-      "city": ["Hà Nội", "Cần Thơ"],
+      "city": [
+        "Hà Nội",
+        "Cần Thơ"
+      ],
       "createAt": "01-05-2023 08:00:00",
       "updateAt": "02-05-2023 12:00:00",
-      "thumbnail":"https://salt.topdev.vn/XQXyPahzAenpMYWH61bBFyKdRU0NEsMDwLkohaCPsrg/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEwLzI0L1RvcERldi1DSFVCQkxvZ29EYXJrQmx1ZVJHQi0xNjY2NTgxMjg1LnBuZw"
+      "thumbnail": "https://salt.topdev.vn/XQXyPahzAenpMYWH61bBFyKdRU0NEsMDwLkohaCPsrg/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEwLzI0L1RvcERldi1DSFVCQkxvZ29EYXJrQmx1ZVJHQi0xNjY2NTgxMjg1LnBuZw"
     },
     {
       "id": 4,
       "idCompany": 1,
       "name": "Mobile Developer",
-      "tags": ["Swift", "Kotlin"],
+      "tags": [
+        "Swift",
+        "Kotlin"
+      ],
       "salary": "1700-2200 USD",
       "description": "Develop and maintain mobile applications for both iOS and Android platforms.",
       "status": true,
-      "city": ["TP. Hồ Chí Minh"],
+      "city": [
+        "TP. Hồ Chí Minh"
+      ],
       "createAt": "27-04-2023 15:45:30",
       "updateAt": "29-04-2023 11:20:55",
       "thumbnail": "https://salt.topdev.vn/BqP10Hya2BkK46Tu17Zo61jRF8pJWBW7uz46nMhlks0/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEyLzA2L1RvcERldi0xMTgxMTg2NzEzNTM3MTQzNjgyOTk3NTU1NTE5MzMxMjU0NDE4NTQ5MDc2N24tMTY3MDMwMzEyMy5qcGc"
@@ -190,81 +215,88 @@
       "id": 5,
       "idCompany": 2,
       "name": "DevOps Engineer",
-      "tags": ["Docker", "Kubernetes", "AWS"],
+      "tags": [
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ],
       "salary": "1900-2600 USD",
       "description": "Manage and improve our infrastructure and deployment pipelines.",
       "status": true,
-      "city": ["Hải Phòng", "Đà Nẵng"],
+      "city": [
+        "Hải Phòng",
+        "Đà Nẵng"
+      ],
       "createAt": "26-04-2023 09:30:10",
       "updateAt": "28-04-2023 10:00:00",
       "thumbnail": "https://salt.topdev.vn/0zVGrlMgwojttng3iHjzGS1PlFtP9W4SGSmy-0JctjE/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzEyLzI2L1RvcERldi1sb2dvLS0tRHVvbmctTmd1eWVuLTE3MDM1NjUzNDYucG5n"
     }
   ],
   "cvs": [
-      {
-        "id": 1,
-        "idCompany": 1,
-        "idJob": 1,
-        "name": "Nguyễn Văn A",
-        "phone": "0987654321",
-        "email": "nguyenvana@example.com",
-        "description": "Tôi là một lập trình viên frontend với 5 năm kinh nghiệm làm việc với React và Javascript.",
-        "linkProject": "https://github.com/nguyenvana/portfolio",
-        "city": "Hà Nội",
-        "statusRead": false,
-        "createAt": "29-04-2023 21:22:17"
-      },
-      {
-        "id": 2,
-        "idCompany": 2,
-        "idJob": 2,
-        "name": "Trần Thị B",
-        "phone": "0912345678",
-        "email": "tranthib@example.com",
-        "description": "Backend developer với 3 năm kinh nghiệm làm việc với Java và Spring Boot.",
-        "linkProject": "https://github.com/tranthib/backend-projects",
-        "city": "Đà Nẵng",
-        "statusRead": true,
-        "createAt": "30-04-2023 10:15:00"
-      },
-      {
-        "id": 3,
-        "idCompany": 3,
-        "idJob": 3,
-        "name": "Lê Văn C",
-        "phone": "0934567890",
-        "email": "levanc@example.com",
-        "description": "Full stack developer với kỹ năng về Python, Django và React, có kinh nghiệm làm việc trong các dự án quốc tế.",
-        "linkProject": "https://github.com/levanc/fullstack-projects",
-        "city": "Cần Thơ",
-        "statusRead": false,
-        "createAt": "01-05-2023 08:00:00"
-      },
-      {
-        "id": 4,
-        "idCompany": 1,
-        "idJob": 4,
-        "name": "Phạm Thị D",
-        "phone": "0945678901",
-        "email": "phamthid@example.com",
-        "description": "Mobile developer với 4 năm kinh nghiệm phát triển ứng dụng iOS và Android bằng Swift và Kotlin.",
-        "linkProject": "https://github.com/phamthid/mobile-projects",
-        "city": "TP. Hồ Chí Minh",
-        "statusRead": true,
-        "createAt": "27-04-2023 15:45:30"
-      },
-      {
-        "id": 5,
-        "idCompany": 2,
-        "idJob": 5,
-        "name": "Hoàng Văn E",
-        "phone": "0967890123",
-        "email": "hoangvane@example.com",
-        "description": "DevOps engineer với 2 năm kinh nghiệm làm việc với Docker, Kubernetes và AWS.",
-        "linkProject": "https://github.com/hoangvane/devops-projects",
-        "city": "Hải Phòng",
-        "statusRead": false,
-        "createAt": "26-04-2023 09:30:10"
-      }
-]
+    {
+      "id": 1,
+      "idCompany": 1,
+      "idJob": 1,
+      "name": "Nguyễn Văn A",
+      "phone": "0987654321",
+      "email": "nguyenvana@example.com",
+      "description": "Tôi là một lập trình viên frontend với 5 năm kinh nghiệm làm việc với React và Javascript.",
+      "linkProject": "https://github.com/nguyenvana/portfolio",
+      "city": "Hà Nội",
+      "statusRead": false,
+      "createAt": "29-04-2023 21:22:17"
+    },
+    {
+      "id": 2,
+      "idCompany": 2,
+      "idJob": 2,
+      "name": "Trần Thị B",
+      "phone": "0912345678",
+      "email": "tranthib@example.com",
+      "description": "Backend developer với 3 năm kinh nghiệm làm việc với Java và Spring Boot.",
+      "linkProject": "https://github.com/tranthib/backend-projects",
+      "city": "Đà Nẵng",
+      "statusRead": true,
+      "createAt": "30-04-2023 10:15:00"
+    },
+    {
+      "id": 3,
+      "idCompany": 3,
+      "idJob": 3,
+      "name": "Lê Văn C",
+      "phone": "0934567890",
+      "email": "levanc@example.com",
+      "description": "Full stack developer với kỹ năng về Python, Django và React, có kinh nghiệm làm việc trong các dự án quốc tế.",
+      "linkProject": "https://github.com/levanc/fullstack-projects",
+      "city": "Cần Thơ",
+      "statusRead": false,
+      "createAt": "01-05-2023 08:00:00"
+    },
+    {
+      "id": 4,
+      "idCompany": 1,
+      "idJob": 4,
+      "name": "Phạm Thị D",
+      "phone": "0945678901",
+      "email": "phamthid@example.com",
+      "description": "Mobile developer với 4 năm kinh nghiệm phát triển ứng dụng iOS và Android bằng Swift và Kotlin.",
+      "linkProject": "https://github.com/phamthid/mobile-projects",
+      "city": "TP. Hồ Chí Minh",
+      "statusRead": true,
+      "createAt": "27-04-2023 15:45:30"
+    },
+    {
+      "id": 5,
+      "idCompany": 2,
+      "idJob": 5,
+      "name": "Hoàng Văn E",
+      "phone": "0967890123",
+      "email": "hoangvane@example.com",
+      "description": "DevOps engineer với 2 năm kinh nghiệm làm việc với Docker, Kubernetes và AWS.",
+      "linkProject": "https://github.com/hoangvane/devops-projects",
+      "city": "Hải Phòng",
+      "statusRead": false,
+      "createAt": "26-04-2023 09:30:10"
+    }
+  ]
 }

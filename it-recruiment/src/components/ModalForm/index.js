@@ -6,12 +6,32 @@ import {
   InputNumber,
   Modal,
   Select,
+  message,
 } from "antd";
 import { TinyColor } from "@ctrl/tinycolor";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getCitys } from "../../service/getCitys";
+import { post } from "../../until/request";
 function ModalForm(props) {
+  const formRef = useRef(null);
+  const key = "updatable";
   const { dataJob } = props;
+  const [messageApi, contextHolder] = message.useMessage();
+  const openMessage = () => {
+    messageApi.open({
+      key,
+      type: "loading",
+      content: "Đang cập nhập...",
+    });
+    setTimeout(() => {
+      messageApi.open({
+        key,
+        type: "success",
+        content: "Bạn đã đăng ký ứng tuyển thành công",
+        duration: 3,
+      });
+    }, 1000);
+  };
   const colors3 = ["#40e495", "#30dd8a", "#2bb673"];
   const getHoverColors = (colors) =>
     colors.map((color) => new TinyColor(color).lighten(5).toString());
@@ -43,7 +63,7 @@ function ModalForm(props) {
       setDataCity(data);
     });
   }, []);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     console.log(e);
 
     // Lấy ngày giờ hiện tại
@@ -65,10 +85,21 @@ function ModalForm(props) {
       createAt: formattedDate, // Gán chuỗi ngày giờ đã định dạng vào createAt
     };
 
+    const respone = await post("/cvs", data);
+
+    if (respone) {
+      openMessage();
+      setTimeout(() => {
+        formRef.current.resetFields();
+      }, 1000);
+    }
+
     console.log(data);
   };
+
   return (
     <>
+      {contextHolder}
       <div className="form">
         <ConfigProvider
           theme={{
@@ -100,6 +131,7 @@ function ModalForm(props) {
           footer={null}
         >
           <Form
+            ref={formRef}
             {...formItemLayout}
             style={{
               maxWidth: 600,
