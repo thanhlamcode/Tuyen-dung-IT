@@ -1,8 +1,8 @@
 import { Tag } from "antd";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./styles.scss";
+import ModalForm from "../../components/ModalForm";
 
 function Apply() {
   const param = useParams();
@@ -36,6 +36,11 @@ function Apply() {
           </p>
           <p>
             {" "}
+            <strong>Thời gian làm việc:</strong>{" "}
+            {dataJob.dataJob.company.workingTime}
+          </p>
+          <p>
+            {" "}
             <strong>Công nghệ sử dụng:</strong>
             {dataJob.dataJob.tags.map((item) => (
               <>
@@ -45,6 +50,7 @@ function Apply() {
           </p>
         </div>
       </div>
+      <ModalForm dataJob={dataJob} />
     </>
   );
 }
