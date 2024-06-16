@@ -1,16 +1,28 @@
-import { Button, Form, Input, InputNumber, Select } from "antd";
+import { Button, Form, Input, InputNumber, message } from "antd";
 import "./styles.scss";
-
+import { post } from "../../until/request";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 function Register() {
-  const workingTime = [
-    { key: 1, value: "Monday" },
-    { key: 2, value: "Tuesday" },
-    { key: 3, value: "Wednesday" },
-    { key: 4, value: "Thursday" },
-    { key: 5, value: "Friday" },
-    { key: 6, value: "Saturday" },
-    { key: 7, value: "Sunday" },
-  ];
+  const [messageApi, contextHolder] = message.useMessage();
+  const formRef = useRef();
+  const navigate = useNavigate();
+  const key = "updatable";
+  const openMessage = () => {
+    messageApi.open({
+      key,
+      type: "loading",
+      content: "Loading...",
+    });
+    setTimeout(() => {
+      messageApi.open({
+        key,
+        type: "success",
+        content: "Đăng ký thành công",
+        duration: 4,
+      });
+    }, 1000);
+  };
 
   const formItemLayout = {
     labelCol: {
@@ -31,21 +43,64 @@ function Register() {
     },
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     console.log(e);
+    const phone = `+84${e.phone}`;
+    const data = {
+      ...e,
+      phone: phone,
+    };
+
+    console.log(data);
+
+    const respone = await post("/companies", data);
+    // const respone = 1;
+    if (respone) {
+      await openMessage(); // Chờ cho openMessage() hoàn thành
+      setTimeout(() => {
+        navigate("/login");
+      }, 3000);
+    }
   };
 
   return (
     <>
+      {contextHolder}
       <div className="register">
         <h1>Đăng ký</h1>
         <Form
+          ref={formRef}
           {...formItemLayout}
           style={{
             maxWidth: 600,
           }}
           onFinish={handleSubmit}
         >
+          <Form.Item
+            name="email"
+            label="Email"
+            rules={[
+              {
+                required: true,
+                type: "email",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            name="password"
+            label="Password"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+
           <Form.Item
             label="Tên công ty"
             name="companyName"
@@ -70,6 +125,7 @@ function Register() {
             ]}
           >
             <InputNumber
+              addonBefore="+84"
               style={{
                 width: "100%",
               }}
@@ -102,18 +158,6 @@ function Register() {
           >
             <Input />
           </Form.Item>
-          <Form.Item
-            name="email"
-            label="Email"
-            rules={[
-              {
-                required: true,
-                type: "email",
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
 
           <Form.Item
             label="Địa chỉ"
@@ -138,7 +182,7 @@ function Register() {
               },
             ]}
           >
-            <Select options={workingTime} mode="multiple" allowClear></Select>
+            <Input />
           </Form.Item>
 
           <Form.Item

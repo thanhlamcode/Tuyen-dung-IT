@@ -47,6 +47,21 @@
       "quantityPeople": 50,
       "description": "Nurturing the next generation of startups.",
       "detail": "Startup Hub is a dynamic company that provides resources, mentorship, and support for emerging startups. Founded in 2018, we have become a cornerstone of the startup ecosystem, helping numerous startups succeed with our team of 50 dedicated professionals. Our services include business strategy, funding, and networking opportunities."
+    },
+    {
+      "email": "chublife@gmail.com",
+      "password": "Lam@31052004",
+      "companyName": "Chubb Life Vietnam",
+      "phone": "+84395544696",
+      "logo": "https://salt.topdev.vn/XQXyPahzAenpMYWH61bBFyKdRU0NEsMDwLkohaCPsrg/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEwLzI0L1RvcERldi1DSFVCQkxvZ29EYXJrQmx1ZVJHQi0xNjY2NTgxMjg1LnBuZw",
+      "thumbnail": "https://salt.topdev.vn/r4AEN7Z5nzz-QOJR1hRsT3Gy0nK1-8kLtcQNenc63iI/fit/640/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDI0LzAyLzE1L1RvcERldi1DaHViYi1MaWZlLS0tMjAyMy1BQUEtMTcwNzk4NzIzOS5qcGc",
+      "address": "Bình Định",
+      "workingTime": "Mon-Fri, 7am-6pm",
+      "website": "chublifevn",
+      "quantityPeople": 1231,
+      "description": "Trở thành Công ty Bảo Hiểm Nhân Thọ hàng đầu với chuẩn mực đạo đức và tính chuyên nghiệp cao nhất",
+      "detail": "Chubb Life is the international life insurance division of Chubb. In Asia, Chubb Life operates in Hong Kong SAR, Indonesia, Korea, Myanmar, Taiwan, Thailand and Vietnam, and participates in a joint-venture in China. Chubb Life has been in Vietnam since 2005, and launched its Fund Management.",
+      "id": 4
     }
   ],
   "cities": [

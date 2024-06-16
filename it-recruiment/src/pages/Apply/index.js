@@ -1,11 +1,9 @@
 import { Tag } from "antd";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import "./styles.scss";
 import ModalForm from "../../components/ModalForm";
 
 function Apply() {
-  const param = useParams();
   const dataJob = useSelector((state) => state.jobReducer);
   console.log(dataJob);
   console.log(dataJob.dataJob);
