@@ -62,6 +62,21 @@
       "description": "Trở thành Công ty Bảo Hiểm Nhân Thọ hàng đầu với chuẩn mực đạo đức và tính chuyên nghiệp cao nhất",
       "detail": "Chubb Life is the international life insurance division of Chubb. In Asia, Chubb Life operates in Hong Kong SAR, Indonesia, Korea, Myanmar, Taiwan, Thailand and Vietnam, and participates in a joint-venture in China. Chubb Life has been in Vietnam since 2005, and launched its Fund Management.",
       "id": 4
+    },
+    {
+      "email": "lgcns@gmail.com",
+      "password": "Lam@31052004",
+      "companyName": "LG CNS Việt Nam",
+      "phone": "123-123-123",
+      "logo": "https://salt.topdev.vn/Ino2MeJAunov7Yvy_iMPCsjMsSmP51sFxzFzfrFusPI/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA5LzEyL1RvcERldi1RcG1ZTWFYTmJEMGlXU29kLTE2OTQ1MzM1NTQucG5n",
+      "thumbnail": "https://salt.topdev.vn/JvC2bu_N_RSwhhKyOhINdRa-PUq8B3wR55fP-oq93Uk/fit/1920/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA0LzA3L1RvcERldi1vcHRpbWl6ZS0tLVJ1VG9IYS1mYW1pbHktMTY4MDgzODcwMC5qcGc",
+      "address": "Bình Định",
+      "workingTime": "Mon-Fri, 7am-6pm",
+      "website": "lgcnsvn",
+      "quantityPeople": 234,
+      "description": "Là Chuyên gia Chuyển đổi Kỹ thuật số (DX) và Đối tác tăng trưởng kỹ thuật số, chúng tôi cống hiến các kỹ năng DX của mình để giúp các khách hàng lớn đạt được thành công. ",
+      "detail": "Là Chuyên gia Chuyển đổi Kỹ thuật số (DX) và Đối tác tăng trưởng kỹ thuật số, chúng tôi cống hiến các kỹ năng DX của mình để giúp các khách hàng lớn đạt được thành công. \n\nLG CNS dẫn đầu công nghệ Cloud, AI/Big data, smart factory, smart logistics, smart city, blockchain, và các công nghệ chuyển đổi số khác",
+      "id": 5
     }
   ],
   "cities": [

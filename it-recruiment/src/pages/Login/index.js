@@ -1,12 +1,23 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import "./styles.scss";
+import { checkLogin } from "../../service/checkLogin";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    const result = await checkLogin(e.email, e.password);
+    if (result) {
+      navigate("/admin"); // Chuyển hướng sau khi xác nhận đăng nhập thành công
+    }
+  };
+
   return (
     <>
       <div className="login">
         <h1>Đăng Nhập</h1>
         <Form
+          onFinish={handleSubmit}
           name="basic"
           labelCol={{
             span: 4,
