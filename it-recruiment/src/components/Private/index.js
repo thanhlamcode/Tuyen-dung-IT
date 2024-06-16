@@ -1,11 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { getCookie } from "../../helpers/cookie";
 
 function Private() {
-  return (
-    <>
-      <Outlet />
-    </>
-  );
+  const token = getCookie("token");
+  return <>{token ? <Outlet /> : <Navigate to="/login" />}</>;
 }
 
 export default Private;

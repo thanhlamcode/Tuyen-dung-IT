@@ -11,6 +11,7 @@ import "./styles.scss";
 import MenuSideBar from "../../components/MenuSideBar";
 import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { deleteCookie } from "../../helpers/cookie";
 function LayoutAdmin() {
   const [collapsed, setCollapsed] = useState(false);
   const { confirm } = Modal;
@@ -23,6 +24,7 @@ function LayoutAdmin() {
         return new Promise((resolve, reject) => {
           setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
           setTimeout(() => {
+            deleteCookie("token");
             navigate("/");
           }, 1000);
         }).catch(() => console.log("Oops errors!"));
