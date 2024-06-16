@@ -1,9 +1,7 @@
 const API_DOMAIN = "http://localhost:3002";
 
 export const get = async (path) => {
-  // Đúng tên biến là response, không phải respone
   const response = await fetch(API_DOMAIN + path);
-  // Sử dụng await để đợi response chuyển đổi thành JSON
   const results = await response.json();
   return results;
 };

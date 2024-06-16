@@ -1,12 +1,12 @@
 import { Button, Form, Input, InputNumber, message } from "antd";
 import "./styles.scss";
-import { post } from "../../until/request";
+import { get, post } from "../../until/request";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCompany } from "../../service/getCompany";
-import { checkEmail } from "../../service/checkRegister";
 function Register() {
   const [messageApi, contextHolder] = message.useMessage();
+  const [messageSameEmail, contextHolderSameEmail] = message.useMessage();
+  const [messageSamePhone, contextHolderSamePhone] = message.useMessage();
   const formRef = useRef();
   const navigate = useNavigate();
   const key = "updatable";
@@ -24,6 +24,24 @@ function Register() {
         duration: 4,
       });
     }, 1000);
+  };
+
+  const sameEmail = () => {
+    messageSameEmail.open({
+      key,
+      type: "error",
+      content: "Email đã tồn tại!",
+      duration: 4,
+    });
+  };
+
+  const SamePhone = () => {
+    messageSamePhone.open({
+      key,
+      type: "error",
+      content: "Số điện thoại đã tồn tại!",
+      duration: 4,
+    });
   };
 
   const formItemLayout = {
@@ -47,28 +65,40 @@ function Register() {
 
   const handleSubmit = async (e) => {
     console.log(e);
-    const phone = `+84${e.phone}`;
     const data = {
       ...e,
-      phone: phone,
     };
 
     console.log(data);
-    // console.log(check);
 
-    const respone = await post("/companies", data);
-    // const respone = 1;
-    if (respone) {
-      await openMessage(); // Chờ cho openMessage() hoàn thành
-      setTimeout(() => {
-        navigate("/login");
-      }, 3000);
+    const checkEmail = await get(`/companies?email=${e.email}`);
+    const checkPhone = await get(`/companies?phone=${e.phone}`);
+    console.log(checkPhone);
+    console.log(checkEmail);
+
+    if (checkEmail.length !== 0) {
+      sameEmail();
+    }
+    if (checkPhone.length !== 0) {
+      SamePhone();
+    }
+
+    if (checkEmail.length === 0 && checkPhone.length === 0) {
+      const response = await post("/companies", data);
+      if (response) {
+        await openMessage();
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+      }
     }
   };
 
   return (
     <>
       {contextHolder}
+      {contextHolderSameEmail}
+      {contextHolderSamePhone}
       <div className="register">
         <h1>Đăng ký</h1>
         <Form
@@ -127,12 +157,10 @@ function Register() {
               },
             ]}
           >
-            <InputNumber
-              addonBefore="+84"
+            <Input
               style={{
                 width: "100%",
               }}
-              maxLength={10}
             />
           </Form.Item>
 
