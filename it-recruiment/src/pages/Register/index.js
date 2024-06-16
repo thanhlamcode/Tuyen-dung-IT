@@ -3,6 +3,8 @@ import "./styles.scss";
 import { post } from "../../until/request";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCompany } from "../../service/getCompany";
+import { checkEmail } from "../../service/checkRegister";
 function Register() {
   const [messageApi, contextHolder] = message.useMessage();
   const formRef = useRef();
@@ -52,6 +54,7 @@ function Register() {
     };
 
     console.log(data);
+    // console.log(check);
 
     const respone = await post("/companies", data);
     // const respone = 1;
