@@ -1,4 +1,4 @@
-import { Button, Layout } from "antd";
+import { Button, Layout, Modal } from "antd";
 import Sider from "antd/es/layout/Sider";
 import {
   HomeOutlined,
@@ -10,10 +10,27 @@ import { Content, Footer } from "antd/es/layout/layout";
 import "./styles.scss";
 import MenuSideBar from "../../components/MenuSideBar";
 import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
-
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 function LayoutAdmin() {
   const [collapsed, setCollapsed] = useState(false);
+  const { confirm } = Modal;
+  const navigate = useNavigate();
+  const showPromiseConfirm = () => {
+    confirm({
+      title: "Bạn có muốn đăng xuất không?",
+      icon: <LogoutOutlined />,
+      onOk() {
+        return new Promise((resolve, reject) => {
+          setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        }).catch(() => console.log("Oops errors!"));
+      },
+      onCancel() {},
+    });
+  };
+
   return (
     <>
       <div className="admin">
@@ -45,7 +62,9 @@ function LayoutAdmin() {
                 <Button icon={<HomeOutlined />}>
                   <NavLink to="/admin/overview">Trang chủ</NavLink>
                 </Button>
-                <Button icon={<LogoutOutlined />}>Đăng xuất</Button>
+                <Button onClick={showPromiseConfirm} icon={<LogoutOutlined />}>
+                  Đăng xuất
+                </Button>
               </div>
             </div>
           </header>

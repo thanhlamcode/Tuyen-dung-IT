@@ -3,6 +3,7 @@ import "./styles.scss";
 import { get, post } from "../../until/request";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { generateToken } from "../../helpers/generateToken";
 function Register() {
   const [messageApi, contextHolder] = message.useMessage();
   const [messageSameEmail, contextHolderSameEmail] = message.useMessage();
@@ -67,6 +68,7 @@ function Register() {
     console.log(e);
     const data = {
       ...e,
+      token: generateToken(),
     };
 
     console.log(data);

@@ -1,19 +1,43 @@
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, message } from "antd";
 import "./styles.scss";
 import { checkLogin } from "../../service/checkLogin";
 import { useNavigate } from "react-router-dom";
+import { setCookie } from "../../helpers/cookie";
 
 function Login() {
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Đăng nhập thành công!",
+    });
+  };
+  const error = () => {
+    messageApi.open({
+      type: "error",
+      content: "Email hoặc mật khẩu sai!",
+    });
+  };
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     const result = await checkLogin(e.email, e.password);
-    if (result) {
-      navigate("/admin"); // Chuyển hướng sau khi xác nhận đăng nhập thành công
+    if (result.length > 0) {
+      console.log(result);
+      success();
+      setCookie("companyName", result[0].companyName, 7);
+      setCookie("idCompany", result[0].id, 7);
+      setCookie("token", result[0].token, 7);
+      setTimeout(() => {
+        navigate("/admin");
+      }, 1500);
+    } else {
+      error();
     }
   };
 
   return (
     <>
+      {contextHolder}
       <div className="login">
         <h1>Đăng Nhập</h1>
         <Form
