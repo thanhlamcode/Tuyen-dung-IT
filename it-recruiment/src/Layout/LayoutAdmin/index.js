@@ -62,7 +62,7 @@ function LayoutAdmin() {
               </div>
               <div className="btn">
                 <Button icon={<HomeOutlined />}>
-                  <NavLink to="/admin/overview">Trang chủ</NavLink>
+                  <NavLink to="/">Trang chủ</NavLink>
                 </Button>
                 <Button onClick={showPromiseConfirm} icon={<LogoutOutlined />}>
                   Đăng xuất

@@ -1,11 +1,34 @@
-import { Layout } from "antd";
+import { useState } from "react";
+import { Button, Layout, Modal } from "antd";
 import "./styles.scss";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../../../src/image/snoopy.webp";
+import { HomeOutlined, LogoutOutlined } from "@ant-design/icons";
+import { deleteCookie, getCookie } from "../../helpers/cookie";
 
 const { Footer, Content } = Layout;
 
 function LayoutDefault() {
+  const { confirm } = Modal;
+  const [token, setToken] = useState(getCookie("token"));
+
+  const handleLogout = () => {
+    confirm({
+      title: "Bạn có muốn đăng xuất không?",
+      icon: <LogoutOutlined />,
+      onOk() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            deleteCookie("token");
+            setToken(null);
+            resolve();
+          }, 1000);
+        }).catch(() => console.log("Oops errors!"));
+      },
+      onCancel() {},
+    });
+  };
+
   return (
     <>
       <Layout>
@@ -16,12 +39,25 @@ function LayoutDefault() {
             </Link>
           </div>
           <div className="header__right">
-            <Link to="login">
-              <button className="btn-dn">Đăng nhập</button>
-            </Link>
-            <Link to="register">
-              <button className="btn-dk">Đăng ký</button>
-            </Link>
+            {token ? (
+              <>
+                <Button icon={<HomeOutlined />}>
+                  <NavLink to="/admin/overview">Trang Quản Lý</NavLink>
+                </Button>
+                <Button onClick={handleLogout} icon={<LogoutOutlined />}>
+                  Đăng xuất
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="login">
+                  <button className="btn-dn">Đăng nhập</button>
+                </Link>
+                <Link to="register">
+                  <button className="btn-dk">Đăng ký</button>
+                </Link>
+              </>
+            )}
           </div>
         </header>
         <Content>
