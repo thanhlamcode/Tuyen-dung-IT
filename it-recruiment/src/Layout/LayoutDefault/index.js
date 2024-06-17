@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Layout, Modal } from "antd";
 import "./styles.scss";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import logo from "../../../src/image/snoopy.webp";
 import { HomeOutlined, LogoutOutlined } from "@ant-design/icons";
 import { deleteCookie, getCookie } from "../../helpers/cookie";
@@ -11,7 +11,7 @@ const { Footer, Content } = Layout;
 function LayoutDefault() {
   const { confirm } = Modal;
   const [token, setToken] = useState(getCookie("token"));
-
+  const navigate = useNavigate();
   const handleLogout = () => {
     confirm({
       title: "Bạn có muốn đăng xuất không?",
@@ -21,6 +21,7 @@ function LayoutDefault() {
           setTimeout(() => {
             deleteCookie("token");
             setToken(null);
+            navigate("/");
             resolve();
           }, 1000);
         }).catch(() => console.log("Oops errors!"));

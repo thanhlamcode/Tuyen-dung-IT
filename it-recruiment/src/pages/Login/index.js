@@ -6,6 +6,7 @@ import { setCookie } from "../../helpers/cookie";
 
 function Login() {
   const [messageApi, contextHolder] = message.useMessage();
+
   const success = () => {
     messageApi.open({
       type: "success",
@@ -28,8 +29,8 @@ function Login() {
       setCookie("idCompany", result[0].id, 7);
       setCookie("token", result[0].token, 7);
       setTimeout(() => {
-        navigate("/admin");
-      }, 1500);
+        navigate("/admin/overview");
+      }, 1000);
     } else {
       error();
     }

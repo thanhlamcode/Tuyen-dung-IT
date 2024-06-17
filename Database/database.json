@@ -152,7 +152,7 @@
   "jobs": [
     {
       "id": 1,
-      "idCompany": 1,
+      "idCompany": 4,
       "name": "Frontend Developer",
       "tags": [
         "Javascript",
@@ -172,7 +172,7 @@
     },
     {
       "id": 2,
-      "idCompany": 2,
+      "idCompany": 4,
       "name": "Backend Developer",
       "tags": [
         "Java",
@@ -191,7 +191,7 @@
     },
     {
       "id": 3,
-      "idCompany": 3,
+      "idCompany": 4,
       "name": "Full Stack Developer",
       "tags": [
         "Python",
