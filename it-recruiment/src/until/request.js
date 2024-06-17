@@ -16,3 +16,14 @@ export const post = async (path, data) => {
   });
   return response.json();
 };
+
+export const patch = async (path, id, data) => {
+  const response = await fetch(`${API_DOMAIN}${path}/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  return response.json();
+};

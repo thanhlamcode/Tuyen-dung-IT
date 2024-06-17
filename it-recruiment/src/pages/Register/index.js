@@ -75,8 +75,6 @@ function Register() {
 
     const checkEmail = await get(`/companies?email=${e.email}`);
     const checkPhone = await get(`/companies?phone=${e.phone}`);
-    console.log(checkPhone);
-    console.log(checkEmail);
 
     if (checkEmail.length !== 0) {
       sameEmail();
