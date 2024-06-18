@@ -1,18 +1,23 @@
-import { Button, Space, Table, Tag } from "antd";
+import { Button, Radio, Space, Table, Tag } from "antd";
 import { useEffect, useState } from "react";
 import { getJobsOnIdCompany } from "../../service/getJobs";
 import { getCookie } from "../../helpers/cookie";
-import { render } from "sass";
 import EditJob from "../EditJob";
 import { DeleteOutlined, EyeOutlined } from "@ant-design/icons";
+import { useSelector } from "react-redux";
 function TableJob() {
+  const loading = useSelector((state) => state.reloadReducer);
+
+  const [top, setTop] = useState("topCenter");
+  const [bottom, setBottom] = useState("bottomCenter");
   const idCompany = getCookie("idCompany");
   const [dataJob, setDataJob] = useState([]);
   useEffect(() => {
     getJobsOnIdCompany(idCompany).then((data) => {
       setDataJob(data);
     });
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
 
   console.log(dataJob);
 
@@ -95,7 +100,32 @@ function TableJob() {
 
   return (
     <>
-      <Table columns={columns} dataSource={dataJob} />
+      <Radio.Group
+        style={{
+          marginBottom: 10,
+        }}
+        value={top}
+        onChange={(e) => {
+          setTop(e.target.value);
+        }}
+      />
+
+      <Radio.Group
+        style={{
+          marginBottom: 10,
+        }}
+        value={bottom}
+        onChange={(e) => {
+          setBottom(e.target.value);
+        }}
+      />
+      <Table
+        columns={columns}
+        dataSource={dataJob.reverse()}
+        pagination={{
+          position: [top, bottom],
+        }}
+      />
     </>
   );
 }

@@ -246,6 +246,301 @@
       "createAt": "26-04-2023 09:30:10",
       "updateAt": "28-04-2023 10:00:00",
       "thumbnail": "https://salt.topdev.vn/0zVGrlMgwojttng3iHjzGS1PlFtP9W4SGSmy-0JctjE/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzEyLzI2L1RvcERldi1sb2dvLS0tRHVvbmctTmd1eWVuLTE3MDM1NjUzNDYucG5n"
+    },
+    {
+      "name": "steady",
+      "tags": [
+        "Javascript",
+        "Java"
+      ],
+      "salary": 3,
+      "description": "ggbf",
+      "city": [
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hà Nội"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:43:00",
+      "id": 6
+    },
+    {
+      "name": "Hà Trần Nhã Linh",
+      "tags": [
+        "Javascript",
+        "Python"
+      ],
+      "salary": 645,
+      "description": "45646",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:45:18",
+      "id": 7
+    },
+    {
+      "name": "adversity",
+      "tags": [
+        "Python",
+        "C#",
+        "Ruby"
+      ],
+      "salary": 234,
+      "description": "xvsvd",
+      "city": [
+        "Hải Phòng",
+        "Cần Thơ"
+      ],
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:49:36",
+      "id": 8
+    },
+    {
+      "name": "Hà Trần Nhã Linh",
+      "tags": [
+        "Javascript",
+        "C#"
+      ],
+      "salary": 234,
+      "description": "234",
+      "city": [
+        "TP. Hồ Chí Minh"
+      ],
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:50:32",
+      "id": 9
+    },
+    {
+      "name": "adversity",
+      "tags": [
+        "Python",
+        "C++",
+        "Go",
+        "Ruby",
+        "PHP"
+      ],
+      "salary": 10000,
+      "description": "234",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:51:35",
+      "id": 10
+    },
+    {
+      "name": "adversity",
+      "tags": [
+        "Java",
+        "PHP"
+      ],
+      "salary": 324,
+      "description": "4234",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:55:27",
+      "id": 11
+    },
+    {
+      "name": "adversity",
+      "tags": [
+        "Java",
+        "PHP"
+      ],
+      "salary": 324,
+      "description": "4234",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:56:23",
+      "id": 12
+    },
+    {
+      "name": "test loader",
+      "tags": [
+        "Python",
+        "Ruby",
+        "Javascript"
+      ],
+      "salary": 234,
+      "description": "234",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:56:53",
+      "id": 13
+    },
+    {
+      "name": "steady",
+      "tags": [
+        "Python",
+        "Ruby"
+      ],
+      "salary": 3242,
+      "description": "32424",
+      "city": [
+        "Đà Nẵng"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:57:34",
+      "id": 14
+    },
+    {
+      "name": "adversity",
+      "tags": [
+        "Java",
+        "C#"
+      ],
+      "salary": 324,
+      "description": "ừe",
+      "city": [
+        "Đà Nẵng"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:58:17",
+      "id": 15
+    },
+    {
+      "name": "render",
+      "tags": [
+        "C#",
+        "C++"
+      ],
+      "salary": 123,
+      "description": "ưdqdw",
+      "city": [
+        "Đà Nẵng"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 15:59:01",
+      "id": 16
+    },
+    {
+      "name": "authentic",
+      "tags": [
+        "Java",
+        "C#",
+        "C++"
+      ],
+      "salary": 123,
+      "description": "1321",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": false,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:00:18",
+      "id": 17
+    },
+    {
+      "name": "reach out to",
+      "tags": [
+        "Java",
+        "C#",
+        "C++"
+      ],
+      "salary": 233,
+      "description": "3243",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:09:09",
+      "id": 18
+    },
+    {
+      "name": "nobita",
+      "tags": [
+        "Java",
+        "Go"
+      ],
+      "salary": 324,
+      "description": "234",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:12:41",
+      "id": 19
+    },
+    {
+      "name": "steady",
+      "tags": [
+        "Java",
+        "PHP"
+      ],
+      "salary": 234,
+      "description": "sds",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:14:55",
+      "id": 20
+    },
+    {
+      "name": "Hà Trần Nhã Linh",
+      "tags": [
+        "Java"
+      ],
+      "salary": 234,
+      "description": "234",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:22:57",
+      "id": 21
+    },
+    {
+      "name": "Lâm",
+      "tags": [
+        "Python",
+        "Go"
+      ],
+      "salary": 2332,
+      "description": "23",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:23:38",
+      "id": 22
+    },
+    {
+      "name": "Lương thế vinh",
+      "tags": [
+        "Python",
+        "Go"
+      ],
+      "salary": 2332,
+      "description": "23",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": "4",
+      "createAt": "18-06-2024 16:25:10",
+      "id": 23
     }
   ],
   "cvs": [
