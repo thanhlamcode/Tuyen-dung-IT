@@ -14,7 +14,7 @@ export const createNewJob = async (idCompany, data) => {
 
   const dataJob = {
     ...data,
-    idCompany: idCompany,
+    idCompany: parseInt(idCompany),
     createAt: formattedDate,
   };
 
