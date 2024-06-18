@@ -1,13 +1,49 @@
-import { Button, Popconfirm, Radio, Space, Table, Tag } from "antd";
+import {
+  Button,
+  Col,
+  Form,
+  Input,
+  InputNumber,
+  Modal,
+  Popconfirm,
+  Radio,
+  Row,
+  Select,
+  Space,
+  Switch,
+  Table,
+  Tag,
+} from "antd";
 import { useEffect, useState } from "react";
 import { getJobsOnIdCompany } from "../../service/getJobs";
 import { getCookie } from "../../helpers/cookie";
 import { DeleteOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 import { getTags } from "../../service/getTags";
+import { useForm } from "antd/es/form/Form";
+import { getCitys } from "../../service/getCitys";
 function TableJob() {
   const loading = useSelector((state) => state.reloadReducer);
 
+  const [option, setOption] = useState([]);
+  const [city, setCity] = useState([]);
+
+  const onFill = () => {
+    form.setFieldsValue({
+      name: "Hello world!",
+      salary: 5000,
+    });
+  };
+
+  useEffect(() => {
+    getTags().then((data) => {
+      setOption(data);
+    });
+
+    getCitys().then((data) => {
+      setCity(data);
+    });
+  }, []);
   const [top, setTop] = useState("topCenter");
   const [bottom, setBottom] = useState("bottomCenter");
   const idCompany = getCookie("idCompany");
@@ -21,6 +57,8 @@ function TableJob() {
     getTags().then((data) => {
       setTag(data);
     });
+
+    // form.resetFields(dataJob);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -34,12 +72,31 @@ function TableJob() {
     })
   );
 
-  console.log(initTag);
-
   const handleDelete = (key) => {
     const newData = dataJob.filter((item) => item.key !== key);
     setDataJob(newData);
   };
+
+  const rule = [
+    {
+      required: true,
+    },
+  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = (id) => {
+    setIsModalOpen(true);
+    console.log(id);
+    console.log(dataJob[1]);
+    onFill();
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const [form] = useForm();
 
   const columns = [
     {
@@ -104,13 +161,14 @@ function TableJob() {
       dataIndex: "action",
       key: "action",
       render: (index, record) => {
-        console.log(index, record);
         return (
           <>
             <Space direction="vertical">
               <Button icon={<EyeOutlined />}></Button>
               <Button
-                // onClick={showModal}
+                onClick={() => {
+                  showModal(record.id);
+                }}
                 style={{
                   color: "#0080CF",
                 }}
@@ -165,6 +223,113 @@ function TableJob() {
           target: "sorter-icon",
         }}
       />
+
+      {/* Modal */}
+      <Modal
+        title="Tạo việc làm mới"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <Form
+          form={form}
+          onLoad={onFill}
+          // onFinish={handleFinish}
+          wrapperCol={{
+            span: 24,
+          }}
+          labelCol={{ span: 24 }}
+        >
+          {/* <Button onClick={onFill}>Onfill</Button> */}
+          <Row>
+            <Col span={24}>
+              <Form.Item label="Tên công việc:" name="name" rules={rule}>
+                <Input></Input>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={24}>
+              <Form.Item label="Tags" name="tags" rules={rule}>
+                <Select
+                  placeholder="Search to Select"
+                  mode="multiple"
+                  options={option}
+                  allowClear
+                ></Select>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={24}>
+              <Form.Item
+                label="Mức lương / tháng (USD)"
+                name="salary"
+                rules={rule}
+              >
+                <InputNumber
+                  min={0}
+                  max={10000}
+                  style={{ width: "100%" }}
+                  addonAfter="$"
+                ></InputNumber>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={24}>
+              <Form.Item label="Mô tả" name="description" rules={rule}>
+                <Input.TextArea
+                  style={{
+                    height: "100px",
+                  }}
+                ></Input.TextArea>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={24}>
+              <Form.Item label="Thành phố" name="city" rules={rule}>
+                <Select
+                  placeholder="Search to Select"
+                  mode="multiple"
+                  options={city}
+                  allowClear
+                ></Select>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={24}>
+              <Form.Item
+                label="Trạng thái"
+                name="status"
+                labelCol={{ span: 4 }}
+                wrapperCol={{ span: 16 }}
+                initialValue={true}
+              >
+                <Switch defaultChecked />
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row gutter={[10, 10]}>
+            <Col span={24}>
+              <Form.Item>
+                <Button htmlType="submit" type="primary">
+                  Save
+                </Button>
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
+      </Modal>
     </>
   );
 }
