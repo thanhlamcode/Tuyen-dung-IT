@@ -104,16 +104,16 @@ function TableJob() {
       title: "Hành động",
       dataIndex: "action",
       key: "action",
-      render: (_, record) => {
+      render: (index, record) => {
+        console.log(index, record);
         return (
           <>
             <Space direction="vertical">
               <Button icon={<EyeOutlined />}></Button>
               <EditJob />
-
               <Popconfirm
                 title="Sure to delete?"
-                onConfirm={() => handleDelete(record.key)}
+                onConfirm={() => handleDelete(record.id)}
               >
                 <Button
                   icon={<DeleteOutlined />}
