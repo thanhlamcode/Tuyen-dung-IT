@@ -1,10 +1,11 @@
-import { Button, Radio, Space, Table, Tag } from "antd";
+import { Button, Popconfirm, Radio, Space, Table, Tag } from "antd";
 import { useEffect, useState } from "react";
 import { getJobsOnIdCompany } from "../../service/getJobs";
 import { getCookie } from "../../helpers/cookie";
 import EditJob from "../EditJob";
 import { DeleteOutlined, EyeOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
+import { getTags } from "../../service/getTags";
 function TableJob() {
   const loading = useSelector((state) => state.reloadReducer);
 
@@ -12,14 +13,34 @@ function TableJob() {
   const [bottom, setBottom] = useState("bottomCenter");
   const idCompany = getCookie("idCompany");
   const [dataJob, setDataJob] = useState([]);
+  const [dataTag, setTag] = useState([]);
   useEffect(() => {
     getJobsOnIdCompany(idCompany).then((data) => {
       setDataJob(data);
+    });
+
+    getTags().then((data) => {
+      setTag(data);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   console.log(dataJob);
+  // console.log(dataTag);
+  const initTag = [];
+  dataTag.forEach((item) =>
+    initTag.push({
+      text: item.value,
+      value: item.value,
+    })
+  );
+
+  console.log(initTag);
+
+  const handleDelete = (key) => {
+    const newData = dataJob.filter((item) => item.key !== key);
+    setDataJob(newData);
+  };
 
   const columns = [
     {
@@ -45,16 +66,20 @@ function TableJob() {
           })}
         </>
       ),
+      filters: initTag,
+      onFilter: (value, record) => record.tags.indexOf(value) === 0,
     },
     {
       title: "Mức lương ($)",
       dataIndex: "salary",
       key: "salary",
+      sorter: (a, b) => a.salary - b.salary,
     },
     {
       title: "Thời gian",
       key: "createAt",
       dataIndex: "createAt",
+      sorter: (a, b) => dataJob.reverse(),
     },
     {
       title: "Trạng thái",
@@ -79,18 +104,24 @@ function TableJob() {
       title: "Hành động",
       dataIndex: "action",
       key: "action",
-      render: (_, { index }) => {
+      render: (_, record) => {
         return (
           <>
             <Space direction="vertical">
               <Button icon={<EyeOutlined />}></Button>
               <EditJob />
-              <Button
-                icon={<DeleteOutlined />}
-                style={{
-                  color: "red",
-                }}
-              ></Button>
+
+              <Popconfirm
+                title="Sure to delete?"
+                onConfirm={() => handleDelete(record.key)}
+              >
+                <Button
+                  icon={<DeleteOutlined />}
+                  style={{
+                    color: "red",
+                  }}
+                ></Button>
+              </Popconfirm>
             </Space>
           </>
         );
@@ -124,6 +155,9 @@ function TableJob() {
         dataSource={dataJob.reverse()}
         pagination={{
           position: [top, bottom],
+        }}
+        showSorterTooltip={{
+          target: "sorter-icon",
         }}
       />
     </>

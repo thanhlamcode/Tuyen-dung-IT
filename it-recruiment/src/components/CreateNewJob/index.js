@@ -25,6 +25,7 @@ function CreateNewJob() {
   const [option, setOption] = useState([]);
   const [city, setCity] = useState([]);
   const [messageApi, contextHolder] = message.useMessage();
+  const [form] = Form.useForm();
   const success = () => {
     messageApi.open({
       type: "success",
@@ -63,6 +64,7 @@ function CreateNewJob() {
       setIsModalOpen(false);
       success();
       dispatch(loadPage());
+      form.resetFields();
     }
   };
   return (
@@ -80,6 +82,7 @@ function CreateNewJob() {
         footer={null}
       >
         <Form
+          form={form}
           onFinish={handleFinish}
           wrapperCol={{
             span: 24,

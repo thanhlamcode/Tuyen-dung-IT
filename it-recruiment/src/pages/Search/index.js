@@ -54,46 +54,50 @@ function Search() {
             <Row gutter={[20, 20]}>
               {dataJobs.map((item) => (
                 <>
-                  <Col span={24}>
-                    <div
-                      className="search__result--item"
-                      onClick={() => {
-                        handleClick(item);
-                      }}
-                    >
-                      <div className="wrap-image">
-                        <Badge.Ribbon text="Apply Now!" color="green">
-                          <img src={item.company.logo} alt="logo"></img>
-                        </Badge.Ribbon>
-                      </div>
-                      <div className="wrap-content">
-                        <h2>{item.name}</h2>
-                        <h3>{item.company.companyName}</h3>
-                        <p>
-                          <strong>Địa chỉ làm việc:</strong>{" "}
-                          {item.city.map((itemCity) => (
-                            <>{itemCity}, </>
-                          ))}
-                        </p>
-                        <p>
-                          {" "}
-                          <strong>Mức lương:</strong> {item.salary}
-                        </p>
-                        <p>
-                          {" "}
-                          <strong>Mô tả công việc:</strong> {item.description}
-                        </p>
-                        <div className="tags">
-                          {item.tags.map((item) => (
-                            <>
-                              {" "}
-                              <Tag color="orange">{item}</Tag>
-                            </>
-                          ))}
+                  {item.status ? (
+                    <Col span={24}>
+                      <div
+                        className="search__result--item"
+                        onClick={() => {
+                          handleClick(item);
+                        }}
+                      >
+                        <div className="wrap-image">
+                          <Badge.Ribbon text="Apply Now!" color="green">
+                            <img src={item.company.logo} alt="logo"></img>
+                          </Badge.Ribbon>
+                        </div>
+                        <div className="wrap-content">
+                          <h2>{item.name}</h2>
+                          <h3>{item.company.companyName}</h3>
+                          <p>
+                            <strong>Địa chỉ làm việc:</strong>{" "}
+                            {item.city.map((itemCity) => (
+                              <>{itemCity}, </>
+                            ))}
+                          </p>
+                          <p>
+                            {" "}
+                            <strong>Mức lương:</strong> {item.salary} <>USD</>
+                          </p>
+                          <p>
+                            {" "}
+                            <strong>Mô tả công việc:</strong> {item.description}
+                          </p>
+                          <div className="tags">
+                            {item.tags.map((item) => (
+                              <>
+                                {" "}
+                                <Tag color="orange">{item}</Tag>
+                              </>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Col>
+                    </Col>
+                  ) : (
+                    <></>
+                  )}
                 </>
               ))}
             </Row>
