@@ -86,8 +86,9 @@ function TableJob() {
   const showModal = (id) => {
     setIsModalOpen(true);
     console.log(id);
-    console.log(dataJob[1]);
-    onFill();
+    const data = dataJob.filter((item) => item.id === id);
+    console.log(data[0]);
+    form.setFieldsValue(data[0]);
   };
   const handleOk = () => {
     setIsModalOpen(false);
@@ -161,6 +162,7 @@ function TableJob() {
       dataIndex: "action",
       key: "action",
       render: (index, record) => {
+        // console.log(record);
         return (
           <>
             <Space direction="vertical">
