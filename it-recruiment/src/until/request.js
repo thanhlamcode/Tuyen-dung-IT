@@ -27,3 +27,10 @@ export const patch = async (path, id, data) => {
   });
   return response.json();
 };
+
+export const deleteApi = async (path, id) => {
+  const response = await fetch(`${API_DOMAIN}${path}/${id}`, {
+    method: "DELETE",
+  });
+  return response.json();
+};

@@ -10,7 +10,7 @@ function JobManager() {
         <h3>Danh sách việc làm</h3>
         <CreateNewJob isLoad={isLoad} setLoad={setLoad} />
         <div className="table-job">
-          <TableJob />
+          <TableJob isLoad={isLoad} setLoad={setLoad} />
         </div>
       </div>
     </>

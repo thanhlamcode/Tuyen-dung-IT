@@ -2,8 +2,7 @@ import { Button, Popconfirm, Radio, Space, Table, Tag } from "antd";
 import { useEffect, useState } from "react";
 import { getJobsOnIdCompany } from "../../service/getJobs";
 import { getCookie } from "../../helpers/cookie";
-import EditJob from "../EditJob";
-import { DeleteOutlined, EyeOutlined } from "@ant-design/icons";
+import { DeleteOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 import { getTags } from "../../service/getTags";
 function TableJob() {
@@ -110,7 +109,13 @@ function TableJob() {
           <>
             <Space direction="vertical">
               <Button icon={<EyeOutlined />}></Button>
-              <EditJob />
+              <Button
+                // onClick={showModal}
+                style={{
+                  color: "#0080CF",
+                }}
+                icon={<EditOutlined />}
+              ></Button>
               <Popconfirm
                 title="Sure to delete?"
                 onConfirm={() => handleDelete(record.id)}
