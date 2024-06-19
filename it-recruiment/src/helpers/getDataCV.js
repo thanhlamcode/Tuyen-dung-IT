@@ -3,7 +3,7 @@ import { get } from "../until/request";
 export const getDataCV = async () => {
   const dataCV = await get("/cvs");
   const dataJob = await get("/jobs");
-  console.log(dataCV, dataJob);
+  //   console.log(dataCV, dataJob);
 
   // Tạo một đối tượng mapping các idJob với tên công việc từ dataJob
   const jobMap = {};
@@ -16,6 +16,6 @@ export const getDataCV = async () => {
     ...itemCV,
     job: jobMap[itemCV.idJob] || "Unknown Job", // Nếu không tìm thấy idJob trong jobMap
   }));
-  console.log(result);
+  //   console.log(result);
   return result;
 };

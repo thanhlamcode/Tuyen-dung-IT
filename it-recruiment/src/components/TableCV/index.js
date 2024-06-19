@@ -1,15 +1,36 @@
-import { Button, Popconfirm, Radio, Space, Table, Tag } from "antd";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import {
+  Button,
+  Col,
+  Modal,
+  Popconfirm,
+  Radio,
+  Row,
+  Space,
+  Table,
+  Tag,
+  message,
+} from "antd";
 import { getDataCV } from "../../helpers/getDataCV";
 import { useEffect, useState } from "react";
 import { EyeOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { patch } from "../../until/request";
+import { deleteApi, patch } from "../../until/request";
 import { loadPage } from "../../actions/reloadAction";
 
 function TableCV() {
   const [data, setData] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+  const [dataModal, setDataModal] = useState({});
   const loading = useSelector((state) => state.reloadReducer);
   const dispatch = useDispatch();
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Xóa CV thành công!",
+    });
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,20 +45,33 @@ function TableCV() {
     fetchData();
   }, [loading]);
 
-  console.log(data);
+  //   console.log(data);
 
-  const handleDelete = () => {};
+  const handleDelete = (id) => {
+    const respone = deleteApi("/cvs", id);
+    if (respone) {
+      success();
+      dispatch(loadPage());
+    }
+  };
 
   const handleSeen = (record) => {
-    console.log(record);
+    setDataModal(record);
+    // console.log(record);
     const data = {
       ...record,
       statusRead: true,
     };
+    setOpenModal(true);
     const respone = patch("/cvs", record.id, data);
     if (respone) {
       dispatch(loadPage());
     }
+  };
+  console.log(dataModal);
+
+  const handleCancel = () => {
+    setOpenModal(false);
   };
 
   const columns = [
@@ -125,6 +159,7 @@ function TableCV() {
   const [bottom, setBottom] = useState("bottomCenter");
   return (
     <>
+      {contextHolder}
       <Table
         columns={columns}
         dataSource={data.reverse()}
@@ -145,6 +180,57 @@ function TableCV() {
           setBottom(e.target.value);
         }}
       />
+      {/* Modal seen */}
+      <Modal
+        title="Thông tin CV"
+        open={openModal}
+        footer={null}
+        onCancel={handleCancel}
+      >
+        <div className="modal-cv">
+          {dataModal && (
+            <Row gutter={0}>
+              <Col span={24}>
+                <p>
+                  {" "}
+                  <strong>Họ và tên ứng viên:</strong> {dataModal.name}
+                </p>
+              </Col>
+              <Col span={24}>
+                <p>
+                  {" "}
+                  <strong>Số điện thoại: </strong> {dataModal.phone}
+                </p>
+              </Col>
+              <Col span={24}>
+                <p>
+                  {" "}
+                  <strong>Email: </strong> {dataModal.email}
+                </p>
+              </Col>
+              <Col span={24}>
+                <p>
+                  {" "}
+                  <strong>Mô tả: </strong> {dataModal.detail}
+                </p>
+              </Col>
+              <Col span={24}>
+                <p>
+                  {" "}
+                  <strong>Link project: </strong> <a>{dataModal.linkProject}</a>
+                </p>
+              </Col>
+              <Col span={24}>
+                <p>
+                  {" "}
+                  <strong>Nơi sinh sống hiện tại: </strong>{" "}
+                  <a>{dataModal.city}</a>
+                </p>
+              </Col>
+            </Row>
+          )}
+        </div>
+      </Modal>
     </>
   );
 }
