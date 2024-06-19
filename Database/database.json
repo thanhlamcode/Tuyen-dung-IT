@@ -51,7 +51,7 @@
     {
       "email": "lgcns@gmail.com",
       "password": "Lam@31052004",
-      "companyName": "LG Việt Nam",
+      "companyName": "LG Việt Nam 2",
       "phone": "0395544696",
       "logo": "https://salt.topdev.vn/XQXyPahzAenpMYWH61bBFyKdRU0NEsMDwLkohaCPsrg/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIyLzEwLzI0L1RvcERldi1DSFVCQkxvZ29EYXJrQmx1ZVJHQi0xNjY2NTgxMjg1LnBuZw",
       "thumbnail": "https://salt.topdev.vn/r4AEN7Z5nzz-QOJR1hRsT3Gy0nK1-8kLtcQNenc63iI/fit/640/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDI0LzAyLzE1L1RvcERldi1DaHViYi1MaWZlLS0tMjAyMy1BQUEtMTcwNzk4NzIzOS5qcGc",
@@ -63,6 +63,22 @@
       "detail": "Là Chuyên gia Chuyển đổi Kỹ thuật số (DX) và Đối tác tăng trưởng kỹ thuật số, chúng tôi cống hiến các kỹ năng DX của mình để giúp các khách hàng lớn đạt được thành công. ",
       "token": "779316rbML",
       "id": 4
+    },
+    {
+      "email": "congty1@gmail.com",
+      "password": "Lam@31052004",
+      "companyName": "DaouKiwoom Innovation",
+      "phone": "09471856492",
+      "logo": "https://salt.topdev.vn/UE_TrS-CL1DQJFwLfvaDtIQ9uN4JohY_UUObUUekVeg/fit/384/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIxLzEwLzEzL1RvcERldi1hMmUwZTdlMTk4MmYzYzI1NzQ5MjAxZTNhNDY1ODNhZi0xNjM0MTA3NzIyLlBORw",
+      "thumbnail": "https://salt.topdev.vn/5WDPotjI3gSlHljNfbtxATlfvyXKyQomocRIy32MeG8/fit/1920/1000/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzAxLzAzL1RvcERldi1TY3JlZW5zaG90MjAyMy0wMS0wMzA4MjQwNS0xNjcyNzA5MTAzLnBuZw",
+      "address": "115 Bắc Từ Liêm",
+      "workingTime": "Mon-Fri, 7am-6pm",
+      "website": "DaouKiwoom.com",
+      "quantityPeople": 12313,
+      "description": "ICT and Finance Platform Leader",
+      "detail": "DaouKiwoom Group has been one of the leading companies in Korea's IT and financial services with the total revenue of 2.2billion USD, profit of 1 billion USD and more than 5,000 employees in 2020.\n\nWe started as the 1st generation IT ventures, DAOU Tech in 1986, and successfully expanded into finance industry in 2000 through Kiwoom securities, No.1 Securities company in Korea.\n\nSo now as a group with a good balance of IT and finance, it is operating in Korea, Japan, China, France, Indonesia and Vietnam.",
+      "token": "391201WEdM",
+      "id": 5
     }
   ],
   "cities": [
@@ -278,26 +294,6 @@
       "id": 7
     },
     {
-      "name": "test3",
-      "tags": [
-        "Docker",
-        "AWS",
-        "SQL",
-        "Spring Boot",
-        "React"
-      ],
-      "salary": 5000,
-      "description": "zsdccsd",
-      "city": [
-        "TP. Hồ Chí Minh",
-        "Đà Nẵng"
-      ],
-      "status": false,
-      "idCompany": 4,
-      "createAt": "18-06-2024 16:35:42",
-      "id": 8
-    },
-    {
       "name": "IT Support",
       "tags": [
         "Python"
@@ -329,6 +325,25 @@
       "idCompany": 4,
       "createAt": "19-06-2024 15:09:54",
       "id": 10
+    },
+    {
+      "name": "việc làm 1",
+      "tags": [
+        "Javascript",
+        "Java",
+        "C#",
+        "PHP"
+      ],
+      "salary": 4000,
+      "description": "Việc làm It lương cao",
+      "city": [
+        "TP. Hồ Chí Minh",
+        "Hà Nội"
+      ],
+      "status": false,
+      "idCompany": 4,
+      "createAt": "19-06-2024 18:02:14",
+      "id": 11
     }
   ],
   "cvs": [
@@ -425,7 +440,7 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 2,
-      "statusRead": false,
+      "statusRead": true,
       "createAt": "19-06-2024 16:59:15",
       "id": 8,
       "job": "Backend Developer"
@@ -439,10 +454,23 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 1,
-      "statusRead": false,
+      "statusRead": true,
       "createAt": "19-06-2024 16:59:41",
       "id": 9,
       "job": "Frontend Developer"
+    },
+    {
+      "name": "UEH",
+      "phone": 395544696,
+      "email": "lamdoan.31221026007@st.ueh.edu.vn",
+      "detail": "học sinh ueh",
+      "linkProject": "ueh.github.com",
+      "city": "TP. Hồ Chí Minh",
+      "idCompany": 4,
+      "idJob": 6,
+      "statusRead": false,
+      "createAt": "19-06-2024 18:03:38",
+      "id": 10
     }
   ]
 }
