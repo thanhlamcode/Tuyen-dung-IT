@@ -196,7 +196,7 @@
       ],
       "salary": 3000,
       "description": "Work on both frontend and backend of our web applications using Django and React.",
-      "status": false,
+      "status": true,
       "city": [
         "Hà Nội",
         "Cần Thơ"
@@ -296,6 +296,39 @@
       "idCompany": 4,
       "createAt": "18-06-2024 16:35:42",
       "id": 8
+    },
+    {
+      "name": "IT Support",
+      "tags": [
+        "Python"
+      ],
+      "salary": 3435,
+      "description": "Usage of basic Tag, and it could be closable and customize close button by set closeIcon property, will display default close button when closeIcon is setting to true. Closable Tag supports onClose events.",
+      "city": [
+        "Đà Nẵng",
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": 4,
+      "createAt": "19-06-2024 14:53:43",
+      "id": 9
+    },
+    {
+      "name": "disbursement",
+      "tags": [
+        "Python",
+        "PHP",
+        "C++"
+      ],
+      "salary": 332,
+      "description": "wf",
+      "city": [
+        "Cần Thơ"
+      ],
+      "status": true,
+      "idCompany": 4,
+      "createAt": "19-06-2024 15:09:54",
+      "id": 10
     }
   ],
   "cvs": [
@@ -349,7 +382,8 @@
       "linkProject": "https://github.com/phamthid/mobile-projects",
       "city": "TP. Hồ Chí Minh",
       "statusRead": true,
-      "createAt": "27-04-2023 15:45:30"
+      "createAt": "27-04-2023 15:45:30",
+      "job": "Mobile Developer"
     },
     {
       "id": 5,
@@ -373,9 +407,24 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 6,
-      "statusRead": false,
+      "statusRead": true,
       "createAt": "19-06-2024 13:59:24",
-      "id": 6
+      "id": 6,
+      "job": "test1"
+    },
+    {
+      "name": "ĐOÀN THANH LÂM",
+      "phone": 395544696,
+      "email": "lamdoan.31221026007@st.ueh.edu.vn",
+      "detail": "qưdqwdf",
+      "linkProject": "thanhlamcide",
+      "city": "TP. Hồ Chí Minh",
+      "idCompany": 4,
+      "idJob": 2,
+      "statusRead": true,
+      "createAt": "19-06-2024 16:12:52",
+      "id": 7,
+      "job": "Backend Developer"
     }
   ]
 }

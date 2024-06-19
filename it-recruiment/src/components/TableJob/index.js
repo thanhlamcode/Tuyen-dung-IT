@@ -31,7 +31,16 @@ function TableJob() {
   const [option, setOption] = useState([]);
   const [city, setCity] = useState([]);
   const [idJob, setIdJob] = useState();
+  const [top, setTop] = useState("topCenter");
+  const [bottom, setBottom] = useState("bottomCenter");
+  const idCompany = getCookie("idCompany");
+  const [dataJob, setDataJob] = useState([]);
+  const [dataTag, setTag] = useState([]);
   const [messageApi, contextHolder] = message.useMessage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [detailData, setDeTailData] = useState([]);
+  const [form] = useForm();
   const success = () => {
     messageApi.open({
       type: "success",
@@ -68,11 +77,7 @@ function TableJob() {
       setCity(data);
     });
   }, []);
-  const [top, setTop] = useState("topCenter");
-  const [bottom, setBottom] = useState("bottomCenter");
-  const idCompany = getCookie("idCompany");
-  const [dataJob, setDataJob] = useState([]);
-  const [dataTag, setTag] = useState([]);
+
   useEffect(() => {
     getJobsOnIdCompany(idCompany).then((data) => {
       setDataJob(data);
@@ -85,8 +90,6 @@ function TableJob() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  console.log(dataJob);
-  // console.log(dataTag);
   const initTag = [];
   dataTag.forEach((item) =>
     initTag.push({
@@ -109,7 +112,7 @@ function TableJob() {
       required: true,
     },
   ];
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const showModal = (id) => {
     setIsModalOpen(true);
     console.log(id);
@@ -123,9 +126,16 @@ function TableJob() {
   };
   const handleCancel = () => {
     setIsModalOpen(false);
+    setOpenModal(false);
   };
 
-  const [form] = useForm();
+  const handleSeen = (id) => {
+    setOpenModal(true);
+    console.log(id);
+    const data = dataJob.filter((item) => item.id === id);
+    setDeTailData(data);
+    console.log(data);
+  };
 
   const columns = [
     {
@@ -164,7 +174,10 @@ function TableJob() {
       title: "Thời gian",
       key: "createAt",
       dataIndex: "createAt",
-      sorter: (a, b) => dataJob.reverse(),
+      sorter: (a, b) => {
+        dataJob.reverse();
+        loadPage();
+      },
     },
     {
       title: "Trạng thái",
@@ -194,7 +207,12 @@ function TableJob() {
         return (
           <>
             <Space direction="vertical">
-              <Button icon={<EyeOutlined />}></Button>
+              <Button
+                icon={<EyeOutlined />}
+                onClick={() => {
+                  handleSeen(record.id);
+                }}
+              ></Button>
               <Button
                 onClick={() => {
                   showModal(record.id);
@@ -248,14 +266,14 @@ function TableJob() {
         columns={columns}
         dataSource={dataJob.reverse()}
         pagination={{
-          position: [top, bottom],
+          position: [bottom],
         }}
         showSorterTooltip={{
           target: "sorter-icon",
         }}
       />
 
-      {/* Modal */}
+      {/* Modal Edit*/}
       <Modal
         title="Tạo việc làm mới"
         open={isModalOpen}
@@ -359,6 +377,65 @@ function TableJob() {
             </Col>
           </Row>
         </Form>
+      </Modal>
+
+      {/* {Modal Seen} */}
+
+      <Modal
+        title="Thông tin chi tiết"
+        open={openModal}
+        footer={null}
+        onCancel={handleCancel}
+      >
+        {detailData.length > 0 && (
+          <Row gutter={20}>
+            <Col span={24}>
+              <p>
+                <strong>Tên công việc:</strong> {detailData[0].name}
+              </p>
+              <p>
+                <strong>Tags:</strong>{" "}
+                {detailData[0].tags.map((item) => (
+                  <Tag color="volcano">{item}</Tag>
+                ))}
+              </p>
+              <p>
+                <strong>Mức lương:</strong> {detailData[0].salary}
+              </p>
+              <p>
+                <strong>Mô tả:</strong> {detailData[0].description}
+              </p>
+              <p>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <strong>Trạng thái:</strong>{" "}
+                  {detailData[0].status ? (
+                    <p style={{ color: "green", marginLeft: "20px" }}>
+                      Đang bật để tuyển dụng
+                    </p>
+                  ) : (
+                    <p style={{ color: "red", marginLeft: "20px" }}>
+                      Chưa bật để tuyển dụng
+                    </p>
+                  )}
+                </div>
+              </p>
+              <p>
+                <strong>Thành phố:</strong>{" "}
+                {detailData[0].city.map((item) => (
+                  <Tag color="cyan">{item}</Tag>
+                ))}
+              </p>
+              <p>
+                <strong>Tạo vào lúc:</strong> {detailData[0].createAt}
+              </p>
+            </Col>
+          </Row>
+        )}
       </Modal>
     </>
   );
