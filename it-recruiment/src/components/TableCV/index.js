@@ -17,6 +17,7 @@ import { EyeOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteApi, patch } from "../../until/request";
 import { loadPage } from "../../actions/reloadAction";
+import { filterJob } from "../../helpers/filterJob";
 
 function TableCV() {
   const [data, setData] = useState([]);
@@ -45,7 +46,9 @@ function TableCV() {
     fetchData();
   }, [loading]);
 
-  //   console.log(data);
+  console.log(data);
+
+  const filterdatajob = filterJob(data);
 
   const handleDelete = (id) => {
     const respone = deleteApi("/cvs", id);
@@ -68,7 +71,7 @@ function TableCV() {
       dispatch(loadPage());
     }
   };
-  console.log(dataModal);
+  //   console.log(dataModal);
 
   const handleCancel = () => {
     setOpenModal(false);
@@ -83,6 +86,8 @@ function TableCV() {
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a>{text}</a>
       ),
+      filters: filterdatajob,
+      onFilter: (value, record) => record.job.indexOf(value) === 0,
     },
     {
       title: "Họ tên",
@@ -111,6 +116,10 @@ function TableCV() {
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a>{text}</a>
       ),
+      sorter: (a, b) => {
+        data.reverse();
+        loadPage();
+      },
     },
     {
       title: "Trạng thái",
@@ -211,7 +220,8 @@ function TableCV() {
               <Col span={24}>
                 <p>
                   {" "}
-                  <strong>Mô tả: </strong> {dataModal.detail}
+                  <strong>Mô tả: </strong>{" "}
+                  {dataModal.detail ? dataModal.detail : dataModal.description}
                 </p>
               </Col>
               <Col span={24}>

@@ -213,11 +213,11 @@
       ],
       "salary": 1700,
       "description": "Develop and maintain mobile applications for both iOS and Android platforms.",
-      "status": true,
+      "status": false,
       "city": [
         "TP. Hồ Chí Minh"
       ],
-      "createAt": "27-05-2023 15:45:30"
+      "createAt": "10-05-2023 15:45:30"
     },
     {
       "id": 5,
@@ -230,7 +230,7 @@
       ],
       "salary": 1900,
       "description": "Manage and improve our infrastructure and deployment pipelines.",
-      "status": true,
+      "status": false,
       "city": [
         "Hải Phòng",
         "Đà Nẵng"
@@ -342,7 +342,7 @@
       "description": "Tôi là một lập trình viên frontend với 5 năm kinh nghiệm làm việc với React và Javascript.",
       "linkProject": "https://github.com/nguyenvana/portfolio",
       "city": "Hà Nội",
-      "statusRead": true,
+      "statusRead": false,
       "createAt": "29-04-2023 21:22:17",
       "job": "Frontend Developer"
     },
@@ -356,8 +356,9 @@
       "description": "Backend developer với 3 năm kinh nghiệm làm việc với Java và Spring Boot.",
       "linkProject": "https://github.com/tranthib/backend-projects",
       "city": "Đà Nẵng",
-      "statusRead": true,
-      "createAt": "30-04-2023 10:15:00"
+      "statusRead": false,
+      "createAt": "30-04-2023 10:15:00",
+      "job": "Backend Developer"
     },
     {
       "id": 3,
@@ -369,7 +370,7 @@
       "description": "Full stack developer với kỹ năng về Python, Django và React, có kinh nghiệm làm việc trong các dự án quốc tế.",
       "linkProject": "https://github.com/levanc/fullstack-projects",
       "city": "Cần Thơ",
-      "statusRead": true,
+      "statusRead": false,
       "createAt": "01-05-2023 08:00:00",
       "job": "Full Stack Developer"
     },
@@ -383,7 +384,7 @@
       "description": "Mobile developer với 4 năm kinh nghiệm phát triển ứng dụng iOS và Android bằng Swift và Kotlin.",
       "linkProject": "https://github.com/phamthid/mobile-projects",
       "city": "TP. Hồ Chí Minh",
-      "statusRead": true,
+      "statusRead": false,
       "createAt": "27-04-2023 15:45:30",
       "job": "Mobile Developer"
     },
@@ -396,7 +397,7 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 6,
-      "statusRead": true,
+      "statusRead": false,
       "createAt": "19-06-2024 13:59:24",
       "id": 6,
       "job": "test1"
@@ -410,7 +411,7 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 2,
-      "statusRead": true,
+      "statusRead": false,
       "createAt": "19-06-2024 16:12:52",
       "id": 7,
       "job": "Backend Developer"
@@ -424,7 +425,7 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 2,
-      "statusRead": true,
+      "statusRead": false,
       "createAt": "19-06-2024 16:59:15",
       "id": 8,
       "job": "Backend Developer"
@@ -440,7 +441,8 @@
       "idJob": 1,
       "statusRead": false,
       "createAt": "19-06-2024 16:59:41",
-      "id": 9
+      "id": 9,
+      "job": "Frontend Developer"
     }
   ]
 }
