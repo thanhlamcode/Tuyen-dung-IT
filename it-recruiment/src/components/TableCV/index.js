@@ -18,8 +18,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteApi, patch } from "../../until/request";
 import { loadPage } from "../../actions/reloadAction";
 import { filterJob } from "../../helpers/filterJob";
+import { getCookie } from "../../helpers/cookie";
 
 function TableCV() {
+  const idCompany = getCookie("idCompany");
   const [data, setData] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [dataModal, setDataModal] = useState({});
@@ -36,7 +38,11 @@ function TableCV() {
     const fetchData = async () => {
       try {
         const fetchedData = await getDataCV();
-        setData(fetchedData);
+        const filter = fetchedData.filter(
+          // eslint-disable-next-line eqeqeq
+          (item) => item.idCompany == idCompany
+        );
+        setData(filter);
       } catch (error) {
         console.error("Error fetching data:", error);
         // Xử lý lỗi khi không thể lấy dữ liệu từ API
@@ -44,6 +50,7 @@ function TableCV() {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   console.log(data);

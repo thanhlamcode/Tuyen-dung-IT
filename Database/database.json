@@ -344,6 +344,22 @@
       "idCompany": 4,
       "createAt": "19-06-2024 18:02:14",
       "id": 11
+    },
+    {
+      "name": "vicinity",
+      "tags": [
+        "Java",
+        "Python"
+      ],
+      "salary": 10000,
+      "description": "fsdfsdaf",
+      "city": [
+        "Đà Nẵng"
+      ],
+      "status": true,
+      "idCompany": 5,
+      "createAt": "19-06-2024 18:25:32",
+      "id": 12
     }
   ],
   "cvs": [
@@ -471,6 +487,33 @@
       "statusRead": false,
       "createAt": "19-06-2024 18:03:38",
       "id": 10
+    },
+    {
+      "name": "kjefnkjwef",
+      "phone": 129831928,
+      "email": "wefwef@gmail.com",
+      "detail": "qèaF",
+      "linkProject": "DẤ",
+      "city": "TP. Hồ Chí Minh",
+      "idCompany": 4,
+      "idJob": 6,
+      "statusRead": false,
+      "createAt": "19-06-2024 18:20:54",
+      "id": 11
+    },
+    {
+      "name": "ĐOÀN THANH LÂM",
+      "phone": 395544696,
+      "email": "lamdoan.31221026007@st.ueh.edu.vn",
+      "detail": "w",
+      "linkProject": "èwef",
+      "city": "TP. Hồ Chí Minh",
+      "idCompany": 5,
+      "idJob": 12,
+      "statusRead": true,
+      "createAt": "19-06-2024 18:25:47",
+      "id": 12,
+      "job": "vicinity"
     }
   ]
 }

@@ -93,7 +93,7 @@ function ModalForm(props) {
         formRef.current.resetFields();
       }, 1000);
     }
-
+    setModal2Open(false);
     console.log(data);
   };
 
