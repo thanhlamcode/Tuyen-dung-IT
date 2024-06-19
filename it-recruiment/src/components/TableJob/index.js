@@ -13,26 +13,50 @@ import {
   Switch,
   Table,
   Tag,
+  message,
 } from "antd";
 import { useEffect, useState } from "react";
 import { getJobsOnIdCompany } from "../../service/getJobs";
 import { getCookie } from "../../helpers/cookie";
 import { DeleteOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTags } from "../../service/getTags";
 import { useForm } from "antd/es/form/Form";
 import { getCitys } from "../../service/getCitys";
+import { deleteApi, patch } from "../../until/request";
+import { loadPage } from "../../actions/reloadAction";
 function TableJob() {
   const loading = useSelector((state) => state.reloadReducer);
-
+  const dispatch = useDispatch();
   const [option, setOption] = useState([]);
   const [city, setCity] = useState([]);
-
-  const onFill = () => {
-    form.setFieldsValue({
-      name: "Hello world!",
-      salary: 5000,
+  const [idJob, setIdJob] = useState();
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Cập nhập thành công!",
     });
+  };
+  const deleteJob = () => {
+    messageApi.open({
+      type: "success",
+      content: "Xóa công việc thành công!",
+    });
+  };
+  const handleFinish = async (e) => {
+    console.log(e);
+    const data = {
+      ...e,
+      idCompany: parseInt(idCompany),
+    };
+    const respone = await patch("/jobs", idJob, data);
+    console.log(respone);
+    if (respone) {
+      success();
+      setIsModalOpen(false);
+      dispatch(loadPage());
+    }
   };
 
   useEffect(() => {
@@ -58,7 +82,6 @@ function TableJob() {
       setTag(data);
     });
 
-    // form.resetFields(dataJob);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -72,9 +95,13 @@ function TableJob() {
     })
   );
 
-  const handleDelete = (key) => {
-    const newData = dataJob.filter((item) => item.key !== key);
-    setDataJob(newData);
+  const handleDelete = async (key) => {
+    const respone = await deleteApi("/jobs", key);
+    console.log(respone);
+    if (respone) {
+      deleteJob();
+      dispatch(loadPage());
+    }
   };
 
   const rule = [
@@ -88,6 +115,7 @@ function TableJob() {
     console.log(id);
     const data = dataJob.filter((item) => item.id === id);
     console.log(data[0]);
+    setIdJob(data[0].id);
     form.setFieldsValue(data[0]);
   };
   const handleOk = () => {
@@ -196,6 +224,7 @@ function TableJob() {
 
   return (
     <>
+      {contextHolder}
       <Radio.Group
         style={{
           marginBottom: 10,
@@ -236,8 +265,7 @@ function TableJob() {
       >
         <Form
           form={form}
-          onLoad={onFill}
-          // onFinish={handleFinish}
+          onFinish={handleFinish}
           wrapperCol={{
             span: 24,
           }}

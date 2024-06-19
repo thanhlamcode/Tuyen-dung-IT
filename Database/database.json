@@ -296,40 +296,6 @@
       "idCompany": 4,
       "createAt": "18-06-2024 16:35:42",
       "id": 8
-    },
-    {
-      "name": "adorn",
-      "tags": [
-        "Java",
-        "C#",
-        "Go"
-      ],
-      "salary": 4354,
-      "description": "gdfdgd",
-      "city": [
-        "Đà Nẵng",
-        "TP. Hồ Chí Minh"
-      ],
-      "status": false,
-      "idCompany": 4,
-      "createAt": "18-06-2024 16:44:14",
-      "id": 9
-    },
-    {
-      "name": "apparel",
-      "tags": [
-        "Java",
-        "Go"
-      ],
-      "salary": 234,
-      "description": "èwe",
-      "city": [
-        "Cần Thơ"
-      ],
-      "status": true,
-      "idCompany": 4,
-      "createAt": "18-06-2024 17:41:31",
-      "id": 10
     }
   ],
   "cvs": [
@@ -397,6 +363,19 @@
       "city": "Hải Phòng",
       "statusRead": false,
       "createAt": "26-04-2023 09:30:10"
+    },
+    {
+      "name": "ĐOÀN THANH LÂM",
+      "phone": 395544696,
+      "email": "lamdoan.31221026007@st.ueh.edu.vn",
+      "detail": "đoàn thanh lâm",
+      "linkProject": "thanhlamcide",
+      "city": "TP. Hồ Chí Minh",
+      "idCompany": 4,
+      "idJob": 6,
+      "statusRead": false,
+      "createAt": "19-06-2024 13:59:24",
+      "id": 6
     }
   ]
 }
