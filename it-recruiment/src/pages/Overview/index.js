@@ -8,6 +8,7 @@ import {
   countJobStatus,
 } from "../../helpers/overviewhelper";
 import "./styles.scss";
+import ColumnLine from "./ColumnLine";
 
 function Overview() {
   const idCompany = getCookie("idCompany");
@@ -87,6 +88,14 @@ function Overview() {
               </div>
             </div>
           </Col>
+        </Row>
+
+        <h1>ANT DESIGN CHARTS</h1>
+        <Row gutter={10}>
+          <Col xs={16}>
+            <ColumnLine />
+          </Col>
+          <Col xs={8}></Col>
         </Row>
       </div>
     </>
