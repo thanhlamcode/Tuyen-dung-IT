@@ -92,8 +92,11 @@ function Overview() {
 
         <h1>ANT DESIGN CHARTS</h1>
         <Row gutter={10}>
-          <Col xs={16}>
-            <ColumnLine />
+          <Col span={16}>
+            <div className="chart1">
+              <h3>BIỂU ĐỒ VIỆC LÀM IT QUA CÁC NĂM</h3>
+              <ColumnLine />
+            </div>
           </Col>
           <Col xs={8}></Col>
         </Row>
