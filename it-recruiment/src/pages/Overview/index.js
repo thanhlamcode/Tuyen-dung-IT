@@ -9,6 +9,8 @@ import {
 } from "../../helpers/overviewhelper";
 import "./styles.scss";
 import ColumnLine from "./ColumnLine";
+import PerCentChart from "./PercentChart";
+import Footer from "./Footer";
 
 function Overview() {
   const idCompany = getCookie("idCompany");
@@ -92,14 +94,32 @@ function Overview() {
 
         <h1>ANT DESIGN CHARTS</h1>
         <Row gutter={10}>
-          <Col span={16}>
+          <Col xl={14} md={14} sm={24} xs={24}>
             <div className="chart1">
               <h3>BIỂU ĐỒ VIỆC LÀM IT QUA CÁC NĂM</h3>
               <ColumnLine />
             </div>
           </Col>
-          <Col xs={8}></Col>
+          <Col xl={10} md={10} sm={24} xs={24}>
+            <div className="income">
+              {" "}
+              <PerCentChart style={{}} />
+              <div className="progress">
+                {" "}
+                <h3>TỈ LỆ HOÀN THÀNH MỤC TIÊU DOANH THU</h3>
+                <Progress
+                  strokeColor="#3BC27F"
+                  percent={52.5}
+                  percentPosition={{
+                    align: "center",
+                    type: "outer",
+                  }}
+                />
+              </div>
+            </div>
+          </Col>
         </Row>
+        <Footer />
       </div>
     </>
   );

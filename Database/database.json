@@ -498,9 +498,10 @@
       "city": "TP. Hồ Chí Minh",
       "idCompany": 4,
       "idJob": 6,
-      "statusRead": false,
+      "statusRead": true,
       "createAt": "19-06-2024 18:20:54",
-      "id": 11
+      "id": 11,
+      "job": "test1"
     },
     {
       "name": "ĐOÀN THANH LÂM",
